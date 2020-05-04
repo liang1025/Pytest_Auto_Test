@@ -41,3 +41,12 @@
  > time.sleep(3)  
  > driver.quit()  
  > ```  
+
+## 0503新增
+1. 封装BasePage基础类
+2. 新增TestSearch.py文件，引入pytest运行case  
+   > pytest注意点：  
+   > 测试文件的文件名必须以"test_"开头，或者以"_test"结尾  
+   > 测试类命名必须以"Test"开头  
+   > 测试函数名必须以"test"开头  
+   > 测试类里面不能使用"__init__"方法
