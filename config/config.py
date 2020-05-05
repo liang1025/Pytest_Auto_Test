@@ -19,6 +19,9 @@ def init():
     # 存放程序所在目录
     _global_dict['root_path'] = root_dir
 
+    # 截图保存路径
+    _global_dict['screenshot_path'] = "{}\\file\\screenshot\\".format(root_dir)
+
     # 保存driver
     _global_dict['driver'] = None
 

@@ -29,7 +29,7 @@
  >'''  
  >
  > from selenium import webdriver  
- >import time
+ > import time
  > 
  > driver = webdriver.Chrome()  
  > driver.maximize_window()  
