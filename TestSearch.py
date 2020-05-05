@@ -6,23 +6,29 @@
 @desc:
 '''
 
-from selenium import webdriver
 import pytest
-import time
+from pages.SearchPage import SearchPage
+import config.config as cf
+from common.mainModule import log
+from selenium import webdriver
 
 
-class TestSearch():
+def main():
+    driver = webdriver.Chrome()
+    cf.set_value('driver', driver)
+    log.info('驱动信息：' + str(cf.get_value('driver')))
+
+
+class TestSearch:
 
     def test_case01(self):
-        keyword = '温一壶清酒 博客园'
-        url = 'https://www.baidu.com'
-        self.driver = webdriver.Chrome()
-        self.driver.get(url)
-        self.driver.find_element_by_id('kw').send_keys(keyword)
-        self.driver.find_element_by_id('su').click()
-        time.sleep(2)
-        self.driver.quit()
+        sp = SearchPage(driver=cf.get_value('driver'))
+        sp.test_search()
 
 
 if __name__ == '__main__':
+    log.info('配置初始化')
+    cf.init()
+    log.info('开始运行代码')
+    main()
     pytest.main(['-q', '-s', 'TestSearch.py'])

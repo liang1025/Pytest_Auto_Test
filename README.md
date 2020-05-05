@@ -50,3 +50,27 @@
    > 测试类命名必须以"Test"开头  
    > 测试函数名必须以"test"开头  
    > 测试类里面不能使用"__init__"方法
+
+## 0504新增
+* 增加日志模块，丰富输出功能  
+   > 示例如下：  
+   > Mon, 04 May 2020 21:06:30-common.mainModule-TestSearch.py-[line:30]-INFO-[日志信息]: 配置初始化  
+   > Mon, 04 May 2020 21:06:30-common.mainModule-TestSearch.py-[line:32]-INFO-[日志信息]: 开始运行代码  
+   > Mon, 04 May 2020 21:06:35-common.mainModule-TestSearch.py-[line:19]-INFO-[日志信息]: 驱动信息：<selenium.webdriver.chrome.webdriver.WebDriver (session="5cb4a11875146327bb5e764d67736d67")>  
+   > Mon, 04 May 2020 21:06:37-common.mainModule-BasePage.py-[line:77]-INFO-[日志信息]: 打开网址：https://www.baidu.com  
+   > Mon, 04 May 2020 21:06:37-common.mainModule-BasePage.py-[line:64]-INFO-[日志信息]: 等待元素：id,kw  
+   > Mon, 04 May 2020 21:06:37-common.mainModule-BasePage.py-[line:91]-INFO-[日志信息]: 获取元素：id,kw  
+   > Mon, 04 May 2020 21:06:37-common.mainModule-BasePage.py-[line:127]-INFO-[日志信息]: 向元素 id,kw 输入文字：温一壶清酒 博客园  
+   > Mon, 04 May 2020 21:06:37-common.mainModule-BasePage.py-[line:64]-INFO-[日志信息]: 等待元素：id,su  
+   > Mon, 04 May 2020 21:06:37-common.mainModule-BasePage.py-[line:91]-INFO-[日志信息]: 获取元素：id,su  
+   > Mon, 04 May 2020 21:06:38-common.mainModule-BasePage.py-[line:201]-INFO-[日志信息]: 点击元素：id,su  
+   > Mon, 04 May 2020 21:06:40-common.mainModule-BasePage.py-[line:364]-INFO-[日志信息]: 等待2秒  
+   > Mon, 04 May 2020 21:06:43-common.mainModule-BasePage.py-[line:360]-INFO-[日志信息]: 关闭页面   
+     
+* 增加全局配置模块，将driver设置为全局变量  
+   > get_value('driver')  # 从全局变量取driver  
+   > set_value('driver', driver) # 设置全局变量
+
+* 丰富BasePage基础类，增加日志输出  
+* 引入PO模式  
+* 新增SearchPage.py，分离搜索页中的元素定位
