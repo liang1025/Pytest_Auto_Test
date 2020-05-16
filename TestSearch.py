@@ -23,7 +23,17 @@ class TestSearch:
 
     def test_case01(self):
         sp = SearchPage(driver=cf.get_value('driver'))
-        sp.test_search()
+        sp.test_search(keyword='温一壶清酒 博客园')
+        assert sp.op_title() == '温一壶清酒 博客园_百度搜索'
+        log.info(sp.op_title())
+        sp.quit()
+
+    def test_case02(self):
+        sp1 = SearchPage(driver=cf.get_value('driver'))
+        sp1.test_search(keyword='温一壶清酒')
+        assert sp1.op_title() == '温一壶清酒 博客园'
+        log.info(sp1.op_title())
+        sp1.quit()
 
 
 if __name__ == '__main__':
