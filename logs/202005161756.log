@@ -1,0 +1,12 @@
+Sat, 16 May 2020 17:56:22-common.mainModule-TestSearch.py-[line:30]-INFO-[日志信息]: 配置初始化
+Sat, 16 May 2020 17:56:22-common.mainModule-TestSearch.py-[line:32]-INFO-[日志信息]: 开始运行代码
+Sat, 16 May 2020 17:56:27-common.mainModule-TestSearch.py-[line:19]-INFO-[日志信息]: 驱动信息：<selenium.webdriver.chrome.webdriver.WebDriver (session="6dbce043406532ea80254cf3070be063")>
+Sat, 16 May 2020 17:56:29-common.mainModule-BasePage.py-[line:77]-INFO-[日志信息]: 打开网址：https://www.baidu.com
+Sat, 16 May 2020 17:56:29-common.mainModule-BasePage.py-[line:64]-INFO-[日志信息]: 等待元素：id,kw
+Sat, 16 May 2020 17:56:29-common.mainModule-BasePage.py-[line:91]-INFO-[日志信息]: 获取元素：id,kw
+Sat, 16 May 2020 17:56:29-common.mainModule-BasePage.py-[line:127]-INFO-[日志信息]: 向元素 id,kw 输入文字：温一壶清酒 博客园
+Sat, 16 May 2020 17:56:29-common.mainModule-BasePage.py-[line:64]-INFO-[日志信息]: 等待元素：id,su
+Sat, 16 May 2020 17:56:29-common.mainModule-BasePage.py-[line:91]-INFO-[日志信息]: 获取元素：id,su
+Sat, 16 May 2020 17:56:29-common.mainModule-BasePage.py-[line:201]-INFO-[日志信息]: 点击元素：id,su
+Sat, 16 May 2020 17:56:31-common.mainModule-BasePage.py-[line:364]-INFO-[日志信息]: 等待2秒
+Sat, 16 May 2020 17:56:34-common.mainModule-BasePage.py-[line:360]-INFO-[日志信息]: 关闭页面
