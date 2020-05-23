@@ -78,3 +78,17 @@
 ## 0516新增
 * 修改用例入参方式
 * 增加断言
+
+## 0523新增
+* 引入conftest.py文件
+  >分离用例运行前和运行后的操作  
+  >
+  >fixture里面有个scope参数可以控制fixture的作用范围：session>module>class>function
+
+  >-function：每一个函数或方法都会调用
+
+  >-class：每一个类调用一次，一个类中可以有多个方法
+
+  >-module：每一个.py文件调用一次，该文件内又有多个function和class
+
+  >-session：是多个文件调用一次，可以跨.py文件调用，每个.py文件就是module

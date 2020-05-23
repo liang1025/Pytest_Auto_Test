@@ -25,6 +25,9 @@ def init():
     # 保存driver
     _global_dict['driver'] = None
 
+    # url
+    _global_dict['url'] = 'https://www.baidu.com'
+
 
 def set_value(name, value):
     """

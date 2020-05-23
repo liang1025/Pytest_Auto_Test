@@ -10,8 +10,6 @@ from pages.BasePage import BasePage
 
 
 class SearchPage(BasePage):
-    def __init__(self, driver):
-        self.driver = driver
 
     input_keyword = 'id,kw'
     click_enter = 'id,su'
@@ -29,8 +27,7 @@ class SearchPage(BasePage):
         return self.get_title()
 
     def test_search(self, keyword):
-        self.open(url=self.url)
+        # self.open(url=self.url)
         self.input_key(keyword)
         self.click_search()
         self.sleep(2)
-        # self.quit()
