@@ -12,14 +12,15 @@ import config.config as cf
 from common.mainModule import log
 
 
-class TestSearch:
-    def test_case01(self, quit_browser):
+class TestSearch():
+    @pytest.mark.mock
+    def test_case01(self, quit_driver):
         sp = SearchPage()
         sp.test_search(keyword='温一壶清酒 博客园')
         assert sp.op_title() == '温一壶清酒 博客园_百度搜索'
         log.info(sp.op_title())
 
-    def test_case02(self, quit_browser):
+    def test_case02(self):
         sp1 = SearchPage()
         sp1.test_search(keyword='温一壶清酒')
         assert sp1.op_title() == '温一壶清酒 博客园'
@@ -30,4 +31,4 @@ if __name__ == '__main__':
     log.info('配置初始化')
     cf.init()
     log.info('开始运行代码')
-    pytest.main(['-q', '-s', 'TestSearch.py'])
+    pytest.main(['-q', '-s', 'TestSearch.py', '-m mock'])

@@ -14,8 +14,8 @@ import os
 
 
 @pytest.fixture(scope='function')
-def quit_browser():
-    cf.init()
+def quit_driver():
+    # cf.init()
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--start-maximized')  # 窗口最大化
     # 新版google不显示正在受自动化软件控制

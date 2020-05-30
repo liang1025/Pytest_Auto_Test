@@ -1,7 +1,7 @@
 '''
 @author: wenyihuqingjiu
-@project: Pytest_Auto_Test
+@project: pytestdemo
 @file: __init__.py
-@time: 2020-05-23 22:01
+@time: 2020-03-13 21:06
 @desc:
 '''
