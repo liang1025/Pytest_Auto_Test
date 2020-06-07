@@ -38,6 +38,7 @@ def pytest_runtest_makereport(item):
     outcome = yield
     report = outcome.get_result()
     extra = getattr(report, 'extra', [])
+    report.nodeid = report.nodeid.encode("utf-8").decode("unicode_escape")  # 解决乱码
 
     if report.when == 'call' or report.when == "setup":
         xfail = hasattr(report, 'wasxfail')

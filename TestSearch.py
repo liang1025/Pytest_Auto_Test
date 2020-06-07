@@ -16,26 +16,50 @@ import config.config as cf
 from common.mainModule import log
 import time
 
+test_data = [
+    # 测试数据
+    {
+        "case": "正确断言",
+        "keywords": "温一壶清酒 博客园",
+        "assert": "温一壶清酒 博客园_百度搜索",
+        "expected": {"msg": "断言成功", "data": None}
+    },
+    {
+        "case": "异常断言",
+        "keywords": "温一壶清酒 博客园",
+        "assert": "温一壶清酒 博客园",
+        "expected": {"msg": "断言失败", "data": None}
+    }
+]
+
+ids = [
+    "测试：{}->输入值:{}-断言值:{}-预期:{}".
+        format(data["case"], data["keywords"], data["assert"], data["expected"]) for data in test_data
+]
+
 
 class TestSearch():
     @pytest.mark.mock
-    def test_case01(self, quit_driver):
+    @pytest.mark.parametrize('data', test_data, ids=ids)
+    def test_case01(self, quit_driver, data):
         '''
-        搜索测试：正向case
+        data['case']
         '''
+
         sp = SearchPage()
-        sp.test_search(keyword='温一壶清酒 博客园')
-        assert sp.op_title() == '温一壶清酒 博客园_百度搜索'
+        sp.test_search(keyword=data['keywords'])
+        assert sp.op_title() == data['assert']
         log.info(sp.op_title())
 
-    def test_case02(self, quit_driver):
-        '''
-        搜索测试：反向case
-        '''
-        sp1 = SearchPage()
-        sp1.test_search(keyword='温一壶清酒')
-        assert sp1.op_title() == '温一壶清酒 博客园'
-        log.info(sp1.op_title())
+
+    # def test_case02(self, quit_driver):
+    #     '''
+    #     搜索测试：反向case
+    #     '''
+    #     sp1 = SearchPage()
+    #     sp1.test_search(keyword='温一壶清酒')
+    #     assert sp1.op_title() == '温一壶清酒 博客园'
+    #     log.info(sp1.op_title())
 
 
 if __name__ == '__main__':
