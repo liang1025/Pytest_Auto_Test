@@ -15,6 +15,7 @@ from pages.SearchPage import SearchPage
 import config.config as cf
 from common.mainModule import log
 import time
+from common.mail import Email
 
 test_data = [
     # 测试数据
@@ -70,3 +71,16 @@ if __name__ == '__main__':
     report_name = 'search' + report_time + '.html'
     # pytest.main(['-q', '-s', 'TestSearch.py', '-m mock'])  # mock标记测试
     pytest.main(['-q', '-s', 'TestSearch.py', '--html=./report/' + report_name , '--self-contained-html'])
+    mail_msg = """
+                <p>Python 邮件发送测试...</p>
+                <p><a href="https://www.cnblogs.com/hong-fithing/">这是温一壶清酒的博客链接</a></p>
+        """
+    # 调用邮件
+    e = Email(title='百度搜索测试报告', message=mail_msg, receiver='',
+              server='', sender='',
+              password='',
+              path='./report/' + report_name
+              )
+    print("调用邮件")
+    e.send()
+    print("邮件发送成功")
