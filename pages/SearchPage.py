@@ -7,12 +7,18 @@
 '''
 
 from pages.BasePage import BasePage
+import common.ExcelData as excel
 
 
 class SearchPage(BasePage):
 
     input_keyword = 'id,kw'
     click_enter = 'id,su'
+
+    data_path = "G:/202001-202012/pytest/Pytest_Auto_Test/file/excel/testcase.xls"
+    sheetname = "Sheet1"
+    get_data = excel.ExcelData(data_path, sheetname)
+    datas = get_data.readExcel()
 
     # keyword = '温一壶清酒 博客园'
     url = 'https://www.baidu.com'
