@@ -1,5 +1,5 @@
 '''
-测试搜索温一壶清酒
+百度搜索温一壶清酒
 '''
 
 '''
@@ -16,6 +16,8 @@ import config.config as cf
 from common.mainModule import log
 import time
 from common.mail import Email
+from common.ExcelList import ExcelList
+from common.ExcelData import ExcelData
 
 
 # test_data = [
@@ -34,32 +36,36 @@ from common.mail import Email
 #     }
 # ]
 #
-# ids = [
-#     "测试：{}->输入值:{}-断言值:{}-预期:{}".
-#         format(data["case"], data["keywords"], data["assert"], data["expected"]) for data in test_data
-# ]
+cf.init()
+ed = ExcelData()
+el = ExcelList()
 
 
 class TestSearch():
     @pytest.mark.mock
-    # @pytest.mark.parametrize('data', test_data, ids=ids)
-    def test_case01(self, quit_driver):
+    @pytest.mark.parametrize('data', ed.get_excel_datas(), ids=el.get_ids())
+    def test_case01(self, quit_driver, data):
         '''
-        正常断言case
+        搜索测试
         '''
         sp = SearchPage()
-        sp.test_search(keyword=sp.datas[1]['操作输入值'])
-        assert sp.op_title() == sp.datas[1]['断言']
+        # sp.test_search(keyword=sp.get_excel_datas()[0]['操作输入值'])
+        # assert sp.op_title() == sp.get_excel_datas()[0]['断言']
+        log.info(ed.get_excel_datas())
+        log.info(el.get_ids())
+        log.info(data['操作输入值'])
+        sp.test_search(keyword=data['操作输入值'])
+        assert sp.op_title() == data['断言']
         log.info(sp.op_title())
 
-    def test_case02(self, quit_driver):
-        '''
-        异常断言case
-        '''
-        sp1 = SearchPage()
-        sp1.test_search(keyword=sp1.datas[1]['操作输入值'])
-        assert sp1.op_title() == sp1.datas[1]['断言']
-        log.info(sp1.op_title())
+    # def test_case02(self, quit_driver):
+    #     '''
+    #     异常断言case
+    #     '''
+    #     sp1 = SearchPage()
+    #     sp1.test_search(keyword=sp1.datas[1]['操作输入值'])
+    #     assert sp1.op_title() == sp1.datas[1]['断言']
+    #     log.info(sp1.op_title())
 
 
 if __name__ == '__main__':
