@@ -9,6 +9,7 @@
 import xlrd
 from xlrd import xldate_as_tuple
 import datetime
+import os
 
 # xlrd中单元格的数据类型
 # 数字一律按浮点型输出，日期输出成一串小数，布尔型输出0或1，所以我们必须在程序中做判断处理转换
@@ -18,49 +19,80 @@ import datetime
 
 class ExcelUtils():
     # 初始化方法
-    def __init__(self, data_path, sheetname):
-        # 定义一个属性接收文件路径
+    def __init__(self, data_path, sheet_name):
         self.data_path = data_path
-        # 定义一个属性接收工作表名称
-        self.sheetname = sheetname
-        # 使用xlrd模块打开excel表读取数据
-        self.data = xlrd.open_workbook(self.data_path)
-        # 根据工作表的名称获取工作表中的内容（方式①）
-        self.table = self.data.sheet_by_name(self.sheetname)
-        # 根据工作表的索引获取工作表的内容（方式②）
-        # self.table = self.data.sheet_by_name(0)
-        # 获取第一行所有内容,如果括号中1就是第二行，这点跟列表索引类似
-        self.keys = self.table.row_values(0)
-        # 获取工作表的有效行数
-        self.rowNum = self.table.nrows
-        # 获取工作表的有效列数
-        self.colNum = self.table.ncols
+        self.sheet_name = sheet_name
+        self.sheet = self.get_sheet()
 
-    # 定义一个读取excel表的方法
-    def readExcel(self):
-        # 定义一个空列表
-        datas = []
-        for i in range(1, self.rowNum):
-            # 定义一个空字典
-            sheet_data = {}
-            for j in range(self.colNum):
+    def get_sheet(self):
+        data = xlrd.open_workbook(self.data_path)
+        sheet = data.sheet_by_name(self.sheet_name)
+        return sheet
+
+    def get_row_count(self):
+        row_count = self.sheet.nrows
+        return row_count
+
+    def get_row_values(self):
+        row_values = self.sheet.row_values(0)
+        return row_values
+
+    def get_col_count(self):
+        col_count = self.sheet.ncols
+        return col_count
+
+    def __get_cell_values(self, row_index, col_index):
+        cell_value = self.sheet.cell_value(row_index, col_index)
+        return cell_value
+
+    def get_merged_cell(self):
+        merged = self.sheet.merged_cells
+        return merged
+
+    def get_merged_cell_value(self, row_index, col_index):
+        # 获取合并单元格&单个单元格数据
+        cell_value = None
+        for(rlow, rhigh, clow, chigh) in self.get_merged_cell():
+            if (row_index >= rlow and row_index < rhigh):
+                if (col_index >= clow and col_index < chigh):
+                    cell_value = self.__get_cell_values(rlow, clow)
+                    break
+                else:
+                    cell_value = self.__get_cell_values(row_index, col_index)
+            else:
+                cell_value = self.__get_cell_values(row_index, col_index)
+        return cell_value
+
+    def get_cell_value_by_dict(self):
+        # 获取数据并转换格式
+        all_data_list = []
+        first_row = self.sheet.row_values(0)
+        for row in range(1, self.get_row_count()):
+            row_dict = {}
+            for col in range(self.get_col_count()):
+                # col不入参0，输出格式为json数据，增加参数0，则为对象
                 # 获取单元格数据类型
-                c_type = self.table.cell(i, j).ctype
+                c_type = self.sheet.cell(row, col).ctype
                 # 获取单元格数据
-                c_cell = self.table.cell_value(i, j)
+                c_cell = self.get_merged_cell_value(row, col)
                 if c_type == 2 and c_cell % 1 == 0:  # 如果是整形
                     c_cell = int(c_cell)
                 elif c_type == 3:
                     # 转成datetime对象
-                    date = datetime.datetime(*xldate_as_tuple(c_cell,0))
+                    date = datetime.datetime(*xldate_as_tuple(c_cell, 0))
                     c_cell = date.strftime('%Y/%d/%m %H:%M:%S')
                 elif c_type == 4:
                     c_cell = True if c_cell == 1 else False
-                sheet_data[self.keys[j]] = c_cell
-                # 循环每一个有效的单元格，将字段与值对应存储到字典中
-                # 字典的key就是excel表中每列第一行的字段
-                # sheet_data[self.keys[j]] = self.table.row_values(i)[j]
-            # 再将字典追加到列表中
-            datas.append(sheet_data)
-        # 返回从excel中获取到的数据：以列表存字典的形式返回
-        return datas
+                row_dict[first_row[col]] = c_cell
+                # row_dict[self.get_row_values()[col]] = c_cell
+            all_data_list.append(row_dict)
+        return all_data_list
+
+
+# if __name__ == '__main__':
+#     current_path = os.path.dirname(__file__)
+#     excel_path = os.path.join(current_path, '..', 'file/excel/testcase.xlsx')
+#     excelUtils = ExcelUtils(excel_path, "Sheet1")
+#     print(excel_path)
+#     datas =excelUtils.get_cell_value_by_dict()
+#     print(datas)
