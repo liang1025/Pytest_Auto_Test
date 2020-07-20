@@ -1,0 +1,92 @@
+Sun, 19 Jul 2020 19:31:23-common.mainModule-conftest.py-[line:26]-INFO-[日志信息]: 打开的网址是：https://www.baidu.com
+Sun, 19 Jul 2020 19:31:23-common.mainModule-conftest.py-[line:27]-INFO-[日志信息]: 初始化driver
+Sun, 19 Jul 2020 19:31:23-common.mainModule-TestSearch.py-[line:54]-INFO-[日志信息]: [{'模块': '搜索测试', '用例编号': '搜索测试01', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 博客园', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园_百度搜索', '预期值': '正确断言'}, {'模块': '搜索测试', '用例编号': '搜索测试02', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 抓包', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园_百度搜索', '预期值': '错误断言'}, {'模块': '搜索测试', '用例编号': '搜索测试03', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 appium', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园', '预期值': '错误断言'}]
+Sun, 19 Jul 2020 19:31:23-common.mainModule-TestSearch.py-[line:55]-INFO-[日志信息]: ['测试：搜索测试01--->输入值:温一壶清酒 博客园--->断言值:温一壶清酒 博客园_百度搜索--->预期:正确断言', '测试：搜索测试02--->输入值:温一壶清酒 抓包--->断言值:温一壶清酒 博客园_百度搜索--->预期:错误断言', '测试：搜索测试03--->输入值:温一壶清酒 appium--->断言值:温一壶清酒 博客园--->预期:错误断言']
+Sun, 19 Jul 2020 19:31:23-common.mainModule-TestSearch.py-[line:56]-INFO-[日志信息]: 温一壶清酒 博客园
+Sun, 19 Jul 2020 19:31:23-common.mainModule-SearchPage.py-[line:31]-INFO-[日志信息]: 调用搜索：温一壶清酒 博客园
+Sun, 19 Jul 2020 19:31:23-common.mainModule-BasePage.py-[line:64]-INFO-[日志信息]: 等待元素：id,kw
+Sun, 19 Jul 2020 19:31:23-common.mainModule-BasePage.py-[line:91]-INFO-[日志信息]: 获取元素：id,kw
+Sun, 19 Jul 2020 19:31:23-common.mainModule-BasePage.py-[line:127]-INFO-[日志信息]: 向元素 id,kw 输入文字：温一壶清酒 博客园
+Sun, 19 Jul 2020 19:31:23-common.mainModule-BasePage.py-[line:64]-INFO-[日志信息]: 等待元素：id,su
+Sun, 19 Jul 2020 19:31:23-common.mainModule-BasePage.py-[line:91]-INFO-[日志信息]: 获取元素：id,su
+Sun, 19 Jul 2020 19:31:23-common.mainModule-BasePage.py-[line:201]-INFO-[日志信息]: 点击元素：id,su
+Sun, 19 Jul 2020 19:31:25-common.mainModule-BasePage.py-[line:364]-INFO-[日志信息]: 等待2秒
+Sun, 19 Jul 2020 19:31:38-common.mainModule-TestSearch.py-[line:72]-INFO-[日志信息]: 配置初始化
+Sun, 19 Jul 2020 19:31:38-common.mainModule-TestSearch.py-[line:74]-INFO-[日志信息]: 开始运行代码
+Sun, 19 Jul 2020 19:31:44-common.mainModule-conftest.py-[line:26]-INFO-[日志信息]: 打开的网址是：https://www.baidu.com
+Sun, 19 Jul 2020 19:31:44-common.mainModule-conftest.py-[line:27]-INFO-[日志信息]: 初始化driver
+Sun, 19 Jul 2020 19:31:44-common.mainModule-TestSearch.py-[line:54]-INFO-[日志信息]: [{'模块': '搜索测试', '用例编号': '搜索测试01', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 博客园', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园_百度搜索', '预期值': '正确断言'}, {'模块': '搜索测试', '用例编号': '搜索测试02', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 抓包', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园_百度搜索', '预期值': '错误断言'}, {'模块': '搜索测试', '用例编号': '搜索测试03', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 appium', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园', '预期值': '错误断言'}]
+Sun, 19 Jul 2020 19:31:44-common.mainModule-TestSearch.py-[line:55]-INFO-[日志信息]: ['测试：搜索测试01--->输入值:温一壶清酒 博客园--->断言值:温一壶清酒 博客园_百度搜索--->预期:正确断言', '测试：搜索测试02--->输入值:温一壶清酒 抓包--->断言值:温一壶清酒 博客园_百度搜索--->预期:错误断言', '测试：搜索测试03--->输入值:温一壶清酒 appium--->断言值:温一壶清酒 博客园--->预期:错误断言']
+Sun, 19 Jul 2020 19:31:44-common.mainModule-TestSearch.py-[line:56]-INFO-[日志信息]: 温一壶清酒 博客园
+Sun, 19 Jul 2020 19:31:44-common.mainModule-SearchPage.py-[line:31]-INFO-[日志信息]: 调用搜索：温一壶清酒 博客园
+Sun, 19 Jul 2020 19:31:44-common.mainModule-BasePage.py-[line:64]-INFO-[日志信息]: 等待元素：id,kw
+Sun, 19 Jul 2020 19:31:44-common.mainModule-BasePage.py-[line:91]-INFO-[日志信息]: 获取元素：id,kw
+Sun, 19 Jul 2020 19:31:44-common.mainModule-BasePage.py-[line:127]-INFO-[日志信息]: 向元素 id,kw 输入文字：温一壶清酒 博客园
+Sun, 19 Jul 2020 19:31:44-common.mainModule-BasePage.py-[line:64]-INFO-[日志信息]: 等待元素：id,su
+Sun, 19 Jul 2020 19:31:44-common.mainModule-BasePage.py-[line:91]-INFO-[日志信息]: 获取元素：id,su
+Sun, 19 Jul 2020 19:31:44-common.mainModule-BasePage.py-[line:201]-INFO-[日志信息]: 点击元素：id,su
+Sun, 19 Jul 2020 19:31:46-common.mainModule-BasePage.py-[line:364]-INFO-[日志信息]: 等待2秒
+Sun, 19 Jul 2020 19:31:46-common.mainModule-BasePage.py-[line:206]-INFO-[日志信息]: 当前页面的title:温一壶清酒 博客园_百度搜索
+Sun, 19 Jul 2020 19:31:46-common.mainModule-BasePage.py-[line:206]-INFO-[日志信息]: 当前页面的title:温一壶清酒 博客园_百度搜索
+Sun, 19 Jul 2020 19:31:46-common.mainModule-TestSearch.py-[line:59]-INFO-[日志信息]: 温一壶清酒 博客园_百度搜索
+Sun, 19 Jul 2020 19:31:49-common.mainModule-conftest.py-[line:31]-INFO-[日志信息]: 关闭浏览器
+Sun, 19 Jul 2020 19:31:55-common.mainModule-conftest.py-[line:26]-INFO-[日志信息]: 打开的网址是：https://www.baidu.com
+Sun, 19 Jul 2020 19:31:55-common.mainModule-conftest.py-[line:27]-INFO-[日志信息]: 初始化driver
+Sun, 19 Jul 2020 19:31:55-common.mainModule-TestSearch.py-[line:54]-INFO-[日志信息]: [{'模块': '搜索测试', '用例编号': '搜索测试01', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 博客园', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园_百度搜索', '预期值': '正确断言'}, {'模块': '搜索测试', '用例编号': '搜索测试02', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 抓包', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园_百度搜索', '预期值': '错误断言'}, {'模块': '搜索测试', '用例编号': '搜索测试03', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 appium', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园', '预期值': '错误断言'}]
+Sun, 19 Jul 2020 19:31:55-common.mainModule-TestSearch.py-[line:55]-INFO-[日志信息]: ['测试：搜索测试01--->输入值:温一壶清酒 博客园--->断言值:温一壶清酒 博客园_百度搜索--->预期:正确断言', '测试：搜索测试02--->输入值:温一壶清酒 抓包--->断言值:温一壶清酒 博客园_百度搜索--->预期:错误断言', '测试：搜索测试03--->输入值:温一壶清酒 appium--->断言值:温一壶清酒 博客园--->预期:错误断言']
+Sun, 19 Jul 2020 19:31:55-common.mainModule-TestSearch.py-[line:56]-INFO-[日志信息]: 温一壶清酒 抓包
+Sun, 19 Jul 2020 19:31:55-common.mainModule-SearchPage.py-[line:31]-INFO-[日志信息]: 调用搜索：温一壶清酒 抓包
+Sun, 19 Jul 2020 19:31:55-common.mainModule-BasePage.py-[line:64]-INFO-[日志信息]: 等待元素：id,kw
+Sun, 19 Jul 2020 19:31:55-common.mainModule-BasePage.py-[line:91]-INFO-[日志信息]: 获取元素：id,kw
+Sun, 19 Jul 2020 19:31:55-common.mainModule-BasePage.py-[line:127]-INFO-[日志信息]: 向元素 id,kw 输入文字：温一壶清酒 抓包
+Sun, 19 Jul 2020 19:31:55-common.mainModule-BasePage.py-[line:64]-INFO-[日志信息]: 等待元素：id,su
+Sun, 19 Jul 2020 19:31:55-common.mainModule-BasePage.py-[line:91]-INFO-[日志信息]: 获取元素：id,su
+Sun, 19 Jul 2020 19:31:55-common.mainModule-BasePage.py-[line:201]-INFO-[日志信息]: 点击元素：id,su
+Sun, 19 Jul 2020 19:31:57-common.mainModule-BasePage.py-[line:364]-INFO-[日志信息]: 等待2秒
+Sun, 19 Jul 2020 19:31:57-common.mainModule-BasePage.py-[line:206]-INFO-[日志信息]: 当前页面的title:温一壶清酒 抓包_百度搜索
+Sun, 19 Jul 2020 19:32:01-common.mainModule-conftest.py-[line:31]-INFO-[日志信息]: 关闭浏览器
+Sun, 19 Jul 2020 19:32:06-common.mainModule-conftest.py-[line:26]-INFO-[日志信息]: 打开的网址是：https://www.baidu.com
+Sun, 19 Jul 2020 19:32:06-common.mainModule-conftest.py-[line:27]-INFO-[日志信息]: 初始化driver
+Sun, 19 Jul 2020 19:32:06-common.mainModule-TestSearch.py-[line:54]-INFO-[日志信息]: [{'模块': '搜索测试', '用例编号': '搜索测试01', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 博客园', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园_百度搜索', '预期值': '正确断言'}, {'模块': '搜索测试', '用例编号': '搜索测试02', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 抓包', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园_百度搜索', '预期值': '错误断言'}, {'模块': '搜索测试', '用例编号': '搜索测试03', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 appium', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园', '预期值': '错误断言'}]
+Sun, 19 Jul 2020 19:32:06-common.mainModule-TestSearch.py-[line:55]-INFO-[日志信息]: ['测试：搜索测试01--->输入值:温一壶清酒 博客园--->断言值:温一壶清酒 博客园_百度搜索--->预期:正确断言', '测试：搜索测试02--->输入值:温一壶清酒 抓包--->断言值:温一壶清酒 博客园_百度搜索--->预期:错误断言', '测试：搜索测试03--->输入值:温一壶清酒 appium--->断言值:温一壶清酒 博客园--->预期:错误断言']
+Sun, 19 Jul 2020 19:32:06-common.mainModule-TestSearch.py-[line:56]-INFO-[日志信息]: 温一壶清酒 抓包
+Sun, 19 Jul 2020 19:32:06-common.mainModule-SearchPage.py-[line:31]-INFO-[日志信息]: 调用搜索：温一壶清酒 抓包
+Sun, 19 Jul 2020 19:32:06-common.mainModule-BasePage.py-[line:64]-INFO-[日志信息]: 等待元素：id,kw
+Sun, 19 Jul 2020 19:32:06-common.mainModule-BasePage.py-[line:91]-INFO-[日志信息]: 获取元素：id,kw
+Sun, 19 Jul 2020 19:32:07-common.mainModule-BasePage.py-[line:127]-INFO-[日志信息]: 向元素 id,kw 输入文字：温一壶清酒 抓包
+Sun, 19 Jul 2020 19:32:07-common.mainModule-BasePage.py-[line:64]-INFO-[日志信息]: 等待元素：id,su
+Sun, 19 Jul 2020 19:32:07-common.mainModule-BasePage.py-[line:91]-INFO-[日志信息]: 获取元素：id,su
+Sun, 19 Jul 2020 19:32:07-common.mainModule-BasePage.py-[line:201]-INFO-[日志信息]: 点击元素：id,su
+Sun, 19 Jul 2020 19:32:09-common.mainModule-BasePage.py-[line:364]-INFO-[日志信息]: 等待2秒
+Sun, 19 Jul 2020 19:32:09-common.mainModule-BasePage.py-[line:206]-INFO-[日志信息]: 当前页面的title:温一壶清酒 抓包_百度搜索
+Sun, 19 Jul 2020 19:32:12-common.mainModule-conftest.py-[line:31]-INFO-[日志信息]: 关闭浏览器
+Sun, 19 Jul 2020 19:32:18-common.mainModule-conftest.py-[line:26]-INFO-[日志信息]: 打开的网址是：https://www.baidu.com
+Sun, 19 Jul 2020 19:32:18-common.mainModule-conftest.py-[line:27]-INFO-[日志信息]: 初始化driver
+Sun, 19 Jul 2020 19:32:18-common.mainModule-TestSearch.py-[line:54]-INFO-[日志信息]: [{'模块': '搜索测试', '用例编号': '搜索测试01', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 博客园', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园_百度搜索', '预期值': '正确断言'}, {'模块': '搜索测试', '用例编号': '搜索测试02', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 抓包', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园_百度搜索', '预期值': '错误断言'}, {'模块': '搜索测试', '用例编号': '搜索测试03', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 appium', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园', '预期值': '错误断言'}]
+Sun, 19 Jul 2020 19:32:18-common.mainModule-TestSearch.py-[line:55]-INFO-[日志信息]: ['测试：搜索测试01--->输入值:温一壶清酒 博客园--->断言值:温一壶清酒 博客园_百度搜索--->预期:正确断言', '测试：搜索测试02--->输入值:温一壶清酒 抓包--->断言值:温一壶清酒 博客园_百度搜索--->预期:错误断言', '测试：搜索测试03--->输入值:温一壶清酒 appium--->断言值:温一壶清酒 博客园--->预期:错误断言']
+Sun, 19 Jul 2020 19:32:18-common.mainModule-TestSearch.py-[line:56]-INFO-[日志信息]: 温一壶清酒 appium
+Sun, 19 Jul 2020 19:32:18-common.mainModule-SearchPage.py-[line:31]-INFO-[日志信息]: 调用搜索：温一壶清酒 appium
+Sun, 19 Jul 2020 19:32:18-common.mainModule-BasePage.py-[line:64]-INFO-[日志信息]: 等待元素：id,kw
+Sun, 19 Jul 2020 19:32:18-common.mainModule-BasePage.py-[line:91]-INFO-[日志信息]: 获取元素：id,kw
+Sun, 19 Jul 2020 19:32:18-common.mainModule-BasePage.py-[line:127]-INFO-[日志信息]: 向元素 id,kw 输入文字：温一壶清酒 appium
+Sun, 19 Jul 2020 19:32:18-common.mainModule-BasePage.py-[line:64]-INFO-[日志信息]: 等待元素：id,su
+Sun, 19 Jul 2020 19:32:18-common.mainModule-BasePage.py-[line:91]-INFO-[日志信息]: 获取元素：id,su
+Sun, 19 Jul 2020 19:32:18-common.mainModule-BasePage.py-[line:201]-INFO-[日志信息]: 点击元素：id,su
+Sun, 19 Jul 2020 19:32:20-common.mainModule-BasePage.py-[line:364]-INFO-[日志信息]: 等待2秒
+Sun, 19 Jul 2020 19:32:20-common.mainModule-BasePage.py-[line:206]-INFO-[日志信息]: 当前页面的title:温一壶清酒 appium_百度搜索
+Sun, 19 Jul 2020 19:32:24-common.mainModule-conftest.py-[line:31]-INFO-[日志信息]: 关闭浏览器
+Sun, 19 Jul 2020 19:32:30-common.mainModule-conftest.py-[line:26]-INFO-[日志信息]: 打开的网址是：https://www.baidu.com
+Sun, 19 Jul 2020 19:32:30-common.mainModule-conftest.py-[line:27]-INFO-[日志信息]: 初始化driver
+Sun, 19 Jul 2020 19:32:30-common.mainModule-TestSearch.py-[line:54]-INFO-[日志信息]: [{'模块': '搜索测试', '用例编号': '搜索测试01', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 博客园', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园_百度搜索', '预期值': '正确断言'}, {'模块': '搜索测试', '用例编号': '搜索测试02', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 抓包', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园_百度搜索', '预期值': '错误断言'}, {'模块': '搜索测试', '用例编号': '搜索测试03', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 appium', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园', '预期值': '错误断言'}]
+Sun, 19 Jul 2020 19:32:30-common.mainModule-TestSearch.py-[line:55]-INFO-[日志信息]: ['测试：搜索测试01--->输入值:温一壶清酒 博客园--->断言值:温一壶清酒 博客园_百度搜索--->预期:正确断言', '测试：搜索测试02--->输入值:温一壶清酒 抓包--->断言值:温一壶清酒 博客园_百度搜索--->预期:错误断言', '测试：搜索测试03--->输入值:温一壶清酒 appium--->断言值:温一壶清酒 博客园--->预期:错误断言']
+Sun, 19 Jul 2020 19:32:30-common.mainModule-TestSearch.py-[line:56]-INFO-[日志信息]: 温一壶清酒 appium
+Sun, 19 Jul 2020 19:32:30-common.mainModule-SearchPage.py-[line:31]-INFO-[日志信息]: 调用搜索：温一壶清酒 appium
+Sun, 19 Jul 2020 19:32:30-common.mainModule-BasePage.py-[line:64]-INFO-[日志信息]: 等待元素：id,kw
+Sun, 19 Jul 2020 19:32:30-common.mainModule-BasePage.py-[line:91]-INFO-[日志信息]: 获取元素：id,kw
+Sun, 19 Jul 2020 19:32:30-common.mainModule-BasePage.py-[line:127]-INFO-[日志信息]: 向元素 id,kw 输入文字：温一壶清酒 appium
+Sun, 19 Jul 2020 19:32:30-common.mainModule-BasePage.py-[line:64]-INFO-[日志信息]: 等待元素：id,su
+Sun, 19 Jul 2020 19:32:30-common.mainModule-BasePage.py-[line:91]-INFO-[日志信息]: 获取元素：id,su
+Sun, 19 Jul 2020 19:32:30-common.mainModule-BasePage.py-[line:201]-INFO-[日志信息]: 点击元素：id,su
+Sun, 19 Jul 2020 19:32:32-common.mainModule-BasePage.py-[line:364]-INFO-[日志信息]: 等待2秒
+Sun, 19 Jul 2020 19:32:32-common.mainModule-BasePage.py-[line:206]-INFO-[日志信息]: 当前页面的title:温一壶清酒 appium_百度搜索
+Sun, 19 Jul 2020 19:32:35-common.mainModule-conftest.py-[line:31]-INFO-[日志信息]: 关闭浏览器
