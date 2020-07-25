@@ -65,12 +65,15 @@ class ExcelUtils():
 
     def get_cell_value_by_dict(self):
         # 获取数据并转换格式
+        # 定义空数组
         all_data_list = []
+        # 获取首行数据
         first_row = self.sheet.row_values(0)
         for row in range(1, self.get_row_count()):
+            # 定义空列表
             row_dict = {}
             for col in range(self.get_col_count()):
-                # col不入参0，输出格式为json数据，增加参数0，则为对象
+                # col不入参0，输出格式为json数组，增加参数0，则为json对象
                 # 获取单元格数据类型
                 c_type = self.sheet.cell(row, col).ctype
                 # 获取单元格数据
@@ -83,9 +86,12 @@ class ExcelUtils():
                     c_cell = date.strftime('%Y/%d/%m %H:%M:%S')
                 elif c_type == 4:
                     c_cell = True if c_cell == 1 else False
+                # 循环每一个有效的单元格，将字段与值对应存储到字典中
                 row_dict[first_row[col]] = c_cell
                 # row_dict[self.get_row_values()[col]] = c_cell
+            # 再将字典追加到列表中
             all_data_list.append(row_dict)
+        # 返回从excel中获取到的数据：以列表存字典的形式返回
         return all_data_list
 
 
