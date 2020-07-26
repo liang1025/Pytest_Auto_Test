@@ -52,30 +52,50 @@ sheet_object = excel_object.sheet_by_name('Sheet1')
 # print('当前excel中的工作表名称为：'+ str(excel_object.sheet_names()))
 
 # 获取有效行数
-row_index = sheet_object.nrows
-# 获取有效列数
-col_index = sheet_object.ncols
-# 定义空数组
-all_data_list = []
-# 获取首行数据
-first_row = sheet_object.row_values(0)
-for row in range(1, row_index):
-    # 定义空列表
-    row_dict = {}
-    for col in range(col_index):
-        c_cell = sheet_object.cell_value(row, col)
-        # 获取单元格数据类型
-        c_type = sheet_object.cell(row, col).ctype
-        if c_type == 2 and c_cell % 1 == 0:  # 如果是整形
-            c_cell = int(c_cell)
-        elif c_type == 3:
-            # 转成datetime对象
-            date = datetime.datetime(*xldate_as_tuple(c_cell, 0))
-            c_cell = date.strftime('%Y-%m-%d')
-        elif c_type == 4:
-            c_cell = True if c_cell == 1 else False
-        # 循环每一个有效的单元格，将字段与值对应存储到字典中
-        row_dict[first_row[col]] = c_cell
-    # 再将字典追加到列表中
-    all_data_list.append(row_dict)
-    print(str(row_dict))
+# row_index = sheet_object.nrows
+# # 获取有效列数
+# col_index = sheet_object.ncols
+# # 定义空数组
+# all_data_list = []
+# # 获取首行数据
+# first_row = sheet_object.row_values(0)
+# for row in range(1, row_index):
+#     # 定义空列表
+#     row_dict = {}
+#     for col in range(col_index):
+#         c_cell = sheet_object.cell_value(row, col)
+#         # 获取单元格数据类型
+#         c_type = sheet_object.cell(row, col).ctype
+#         if c_type == 2 and c_cell % 1 == 0:  # 如果是整形
+#             c_cell = int(c_cell)
+#         elif c_type == 3:
+#             # 转成datetime对象
+#             date = datetime.datetime(*xldate_as_tuple(c_cell, 0))
+#             c_cell = date.strftime('%Y-%m-%d')
+#         elif c_type == 4:
+#             c_cell = True if c_cell == 1 else False
+#         # 循环每一个有效的单元格，将字段与值对应存储到字典中
+#         row_dict[first_row[col]] = c_cell
+#     # 再将字典追加到列表中
+#     all_data_list.append(row_dict)
+#     print(str(row_dict))
+
+meger_cell = sheet_object.merged_cells
+print(str(meger_cell))
+
+
+def get_meger_cell_value(row_index, col_index):
+    cell_value = None
+    for(rlow, rhight, clow, chight) in meger_cell:
+        if(row_index >= rlow and row_index < rhight):
+            if(col_index >= clow and col_index < chight):
+                cell_value = sheet_object.cell_value(rlow, clow)
+                break
+            else:
+                cell_value = sheet_object.cell_value(row_index, col_index)
+        else:
+            cell_value = sheet_object.cell_value(row_index, col_index)
+    return cell_value
+
+
+print(get_meger_cell_value(0, 0))
