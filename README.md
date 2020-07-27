@@ -123,3 +123,4 @@
 
 ## 0727新增
 * 增加allure测试报告
+* conftest文件中增加函数pytest_collection_modifyitems，解决控制台乱码问题
