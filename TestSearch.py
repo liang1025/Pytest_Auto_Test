@@ -18,6 +18,8 @@ import time
 from common.mail import Email
 from common.ExcelList import ExcelList
 from common.ExcelData import ExcelData
+import allure
+import os
 
 
 # test_data = [
@@ -42,6 +44,10 @@ el = ExcelList()
 
 
 class TestSearch():
+    @allure.step("搜索测试")
+    @allure.feature("百度搜索测试")
+    @allure.story("温一壶清酒 执行")
+    @allure.severity("trivial")
     @pytest.mark.mock
     @pytest.mark.parametrize('data', ed.get_excel_datas(), ids=el.get_ids())
     def test_case01(self, quit_driver, data):
@@ -75,7 +81,18 @@ if __name__ == '__main__':
     report_time = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime(time.time()))
     report_name = 'search' + report_time + '.html'
     # pytest.main(['-q', '-s', 'TestSearch.py', '-m mock'])  # mock标记测试
-    pytest.main(['-q', '-s', 'TestSearch.py', '--reruns', '1', '--html=./report/' + report_name , '--self-contained-html'])
+    # 生成html报告
+    # pytest.main(['-q', '-s', 'TestSearch.py', '--reruns', '1', '--html=./report/' + report_name , '--self-contained-html'])
+    # 生成allure报告
+    pytest.main(['-q', '-s', 'TestSearch.py', '-m mock', '--alluredir', './report'])
+    init_report = 'allure generate --clean ./report'
+    os.system(init_report)
+    log.info("测试报告json文件初始化成功！")
+    time.sleep(2)
+    report_path = 'del /f /q G:\\202001-202012\\pytest\\Pytest_Auto_Test\\report'
+    log.info(report_path)
+    os.system(report_path)
+    log.info("删除report下的json文件")
     # mail_msg = """
     #             <p>Python 邮件发送测试...</p>
     #             <p><a href="https://www.cnblogs.com/hong-fithing/">这是温一壶清酒的博客链接</a></p>

@@ -12,6 +12,7 @@ import config.config as cf
 from common.mainModule import log
 from py._xmlgen import html
 import time
+import os
 
 
 @pytest.fixture(scope='function')
@@ -29,6 +30,24 @@ def quit_driver():
     yield
     driver.quit()
     log.info('关闭浏览器')
+
+
+@pytest.fixture(scope='module')
+def clear_report():
+    log.info('运行代码')
+    cf.init() # 以pytest框架方式运行代码需要开启
+    log.info('全局初始化')
+    yield
+    # time.sleep(5)
+    # log.info("报告延迟处理10s")
+    init_report = 'allure generate --clean ./report'
+    os.system(init_report)
+    log.info("测试报告json文件初始化成功！")
+    time.sleep(2)
+    report_path = 'del /f /q G:\\202001-202012\\pytest\\Pytest_Auto_Test\\report'
+    log.info(report_path)
+    os.system(report_path)
+    log.info("删除report下的json文件")
 
 
 @pytest.mark.hookwrapper
