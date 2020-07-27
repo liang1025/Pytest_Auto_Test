@@ -50,6 +50,16 @@ def clear_report():
     log.info("删除report下的json文件")
 
 
+def pytest_collection_modifyitems(items):
+    """
+    测试用例收集完成时，将收集到的item的name和nodeid的中文显示在控制台上
+    解决乱码问题
+    :return:
+    """
+    for item in items:
+        item.name = item.name.encode("utf-8").decode("unicode_escape")
+        item._nodeid = item.nodeid.encode("utf-8").decode("unicode_escape")
+
 @pytest.mark.hookwrapper
 def pytest_runtest_makereport(item):
     """当测试失败的时候，自动截图，展示到html报告中"""
@@ -57,7 +67,6 @@ def pytest_runtest_makereport(item):
     outcome = yield
     report = outcome.get_result()
     extra = getattr(report, 'extra', [])
-    report.nodeid = report.nodeid.encode("utf-8").decode("unicode_escape")  # 解决乱码
 
     if report.when == 'call' or report.when == "setup":
         xfail = hasattr(report, 'wasxfail')
@@ -71,6 +80,7 @@ def pytest_runtest_makereport(item):
         report.extra = extra
         report.description = str(item.function.__doc__)
         report.module = str(item.module.__doc__)
+        # report.nodeid = report.nodeid.encode("utf-8").decode("unicode_escape")  # 解决乱码
 
 
 def _capture_screenshot():

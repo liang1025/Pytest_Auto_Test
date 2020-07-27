@@ -83,7 +83,7 @@ class ExcelUtils():
                 elif c_type == 3:
                     # 转成datetime对象
                     date = datetime.datetime(*xldate_as_tuple(c_cell, 0))
-                    c_cell = date.strftime('%Y/%d/%m %H:%M:%S')
+                    c_cell = date.strftime('%Y/%m/%d %H:%M:%S')
                 elif c_type == 4:
                     c_cell = True if c_cell == 1 else False
                 # 循环每一个有效的单元格，将字段与值对应存储到字典中
