@@ -124,3 +124,6 @@
 ## 0727新增
 * 增加allure测试报告
 * conftest文件中增加函数pytest_collection_modifyitems，解决控制台乱码问题
+
+## 0730新增
+* 增加测试报告文件支持打压缩包并发送到邮箱
