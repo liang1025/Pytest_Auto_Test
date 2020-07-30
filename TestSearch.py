@@ -20,7 +20,9 @@ from common.ExcelList import ExcelList
 from common.ExcelData import ExcelData
 import allure
 import os
-
+# from common.ReportZip import ReportZip
+import common.ReportZip as report_zip
+import zipfile
 
 # test_data = [
 #     # 测试数据
@@ -89,9 +91,14 @@ if __name__ == '__main__':
     os.system(init_report)
     log.info("测试报告json文件初始化成功！")
     time.sleep(2)
-    report_path = 'del /f /q G:\\202001-202012\\pytest\\Pytest_Auto_Test\\report'
-    log.info(report_path)
-    os.system(report_path)
+    report_file_path = os.getcwd() + '\\allure - report'
+    report_zip_path = os.getcwd() + '\\reportzip\\' + '自动化测试' + report_time + '.zip'
+    # 调用打包程序
+    data = report_zip.ReportZip(report_file_path, report_zip_path)
+    data.report_zip()
+    del_report_path = 'del /f /q G:\\202001-202012\\pytest\\Pytest_Auto_Test\\report'
+    log.info(del_report_path)
+    os.system(del_report_path)
     log.info("删除report下的json文件")
     # mail_msg = """
     #             <p>Python 邮件发送测试...</p>
