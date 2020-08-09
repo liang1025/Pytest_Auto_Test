@@ -6,13 +6,13 @@
 @desc:
 '''
 
+import os
 import pytest
 from selenium import webdriver
 import config.config as cf
 from common.mainModule import log
 from py._xmlgen import html
 import time
-import os
 
 
 @pytest.fixture(scope='function')
@@ -23,8 +23,8 @@ def quit_driver():
     # 新版google不显示正在受自动化软件控制
     chrome_options.add_experimental_option('excludeSwitches', ['enable-automation'])
     driver = webdriver.Chrome(options=chrome_options)
-    driver.get(cf.get_value('url'))
-    log.info('打开的网址是：' + cf.get_value('url'))
+    driver.get(cf.get_value('site'))
+    log.info('打开的网址是：' + cf.get_value('site'))
     log.info("初始化driver")
     cf.set_value('driver', driver)
     yield
@@ -35,7 +35,7 @@ def quit_driver():
 @pytest.fixture(scope='module')
 def clear_report():
     log.info('运行代码')
-    cf.init() # 以pytest框架方式运行代码需要开启
+    # cf.init() # 以pytest框架方式运行代码需要开启
     log.info('全局初始化')
     yield
     # time.sleep(5)

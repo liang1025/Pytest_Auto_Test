@@ -27,8 +27,7 @@ class SearchPage(BasePage):
         return self.get_title()
 
     def test_search(self, keyword):
-        # self.open(url=self.url)
-        log.info("调用搜索：" + keyword)
+        # self.open(url)
         self.input_key(keyword)
         self.click_search()
         self.sleep(2)

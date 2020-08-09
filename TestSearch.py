@@ -20,9 +20,9 @@ from common.ExcelList import ExcelList
 from common.ExcelData import ExcelData
 import allure
 import os
-# from common.ReportZip import ReportZip
 import common.ReportZip as report_zip
-import zipfile
+import common.Argprase as argparse
+from pages.JenkinsPage import JenkinsPage
 
 # test_data = [
 #     # 测试数据
@@ -40,7 +40,8 @@ import zipfile
 #     }
 # ]
 #
-cf.init()
+# log.info('配置初始化')
+# cf.init()
 ed = ExcelData()
 el = ExcelList()
 
@@ -66,19 +67,21 @@ class TestSearch():
         assert sp.op_title() == data['断言']
         log.info(sp.op_title())
 
-    # def test_case02(self, quit_driver):
-    #     '''
-    #     异常断言case
-    #     '''
-    #     sp1 = SearchPage()
-    #     sp1.test_search(keyword=sp1.datas[1]['操作输入值'])
-    #     assert sp1.op_title() == sp1.datas[1]['断言']
-    #     log.info(sp1.op_title())
+    @pytest.mark.jenkins
+    def test_case02(self, quit_driver):
+        '''
+        jenkins
+        '''
+        jp = JenkinsPage()
+        jp.login_success('', '')
 
 
 if __name__ == '__main__':
-    log.info('配置初始化')
-    cf.init()
+    arg = argparse.Argprase()
+    arg.get_args()
+    # log.info('配置初始化')
+    # cf.init()
+    log.info('主程序中获取到的site地址：' + cf.get_value('site'))
     log.info('开始运行代码')
     report_time = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime(time.time()))
     report_name = 'search' + report_time + '.html'
@@ -86,7 +89,9 @@ if __name__ == '__main__':
     # 生成html报告
     # pytest.main(['-q', '-s', 'TestSearch.py', '--reruns', '1', '--html=./report/' + report_name , '--self-contained-html'])
     # 生成allure报告
-    pytest.main(['-q', '-s', 'TestSearch.py', '-m mock', '--alluredir', './report'])
+    mark = cf.get_value('mark')
+    log.info('获取到的mark数据：' + mark)
+    pytest.main(['-q', '-s', 'TestSearch.py', '-m' + mark, '--alluredir', './report'])
     init_report = 'allure generate --clean ./report'
     os.system(init_report)
     log.info("测试报告json文件初始化成功！")

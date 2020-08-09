@@ -28,6 +28,13 @@ def init():
     # url
     _global_dict['url'] = 'https://www.baidu.com'
 
+    # 设置运行环境
+    _global_dict['site'] = 'https://www.baidu.com/'
+    # 运行环境，默认test，可设为prod
+    _global_dict['environment'] = 'test'
+    # 标记
+    _global_dict['mark'] = 'mock'
+
 
 def set_value(name, value):
     """
