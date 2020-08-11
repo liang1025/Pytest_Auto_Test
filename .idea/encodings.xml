@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$/__init__.py" charset="GBK" />
     <file url="file://$PROJECT_DIR$/conftest.py" charset="GBK" />
     <file url="file://$PROJECT_DIR$/file/excel/testcase.xls" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/project.txt" charset="GBK" />
     <file url="file://$PROJECT_DIR$/pytest.ini" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
