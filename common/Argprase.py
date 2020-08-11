@@ -29,7 +29,7 @@ class Argprase():
             cf.set_value('site', 'http://www.baidu.com/')
         elif args.environment in ('prod', 'prod'):
             cf.set_value('environment', 'prod')
-            cf.set_value('site', '')
+            cf.set_value('site', 'a')
         else:
             exit()
             print("请输入test/prod")

@@ -73,7 +73,7 @@ class TestSearch():
         jenkins
         '''
         jp = JenkinsPage()
-        jp.login_success('', '')
+        jp.login_success('a', 'a')
 
 
 if __name__ == '__main__':

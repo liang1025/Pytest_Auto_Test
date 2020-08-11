@@ -1,0 +1,12 @@
+INFO     common.mainModule:conftest.py:27 打开的网址是：http://101.132.187.31:9088
+INFO     common.mainModule:conftest.py:28 初始化driver
+INFO     common.mainModule:BasePage.py:64 等待元素：id,j_username
+INFO     common.mainModule:BasePage.py:91 获取元素：id,j_username
+INFO     common.mainModule:BasePage.py:127 向元素 id,j_username 输入文字：yangziling
+INFO     common.mainModule:BasePage.py:64 等待元素：name,j_password
+INFO     common.mainModule:BasePage.py:91 获取元素：name,j_password
+INFO     common.mainModule:BasePage.py:127 向元素 name,j_password 输入文字：yangziling
+INFO     common.mainModule:BasePage.py:64 等待元素：name,Submit
+INFO     common.mainModule:BasePage.py:91 获取元素：name,Submit
+INFO     common.mainModule:BasePage.py:201 点击元素：name,Submit
+INFO     common.mainModule:conftest.py:32 关闭浏览器
