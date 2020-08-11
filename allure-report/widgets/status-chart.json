@@ -1,11 +1,31 @@
 [ {
-  "uid" : "4d5bdee62b037468",
-  "name" : "test_case02",
+  "uid" : "a9aa5f877ad7c1a8",
+  "name" : "test_case01[测试：搜索测试01--->输入值:温一壶清酒 博客园--->断言值:温一壶清酒 博客园_百度搜索--->预期:正确断言]",
   "time" : {
-    "start" : 1596981306218,
-    "stop" : 1596981307890,
-    "duration" : 1672
+    "start" : 1597152214449,
+    "stop" : 1597152218177,
+    "duration" : 3728
   },
   "status" : "passed",
-  "severity" : "normal"
+  "severity" : "trivial"
+}, {
+  "uid" : "8b690a74361eaf84",
+  "name" : "test_case01[测试：搜索测试03--->输入值:温一壶清酒 appium--->断言值:温一壶清酒 博客园--->预期:错误断言]",
+  "time" : {
+    "start" : 1597152238654,
+    "stop" : 1597152241823,
+    "duration" : 3169
+  },
+  "status" : "failed",
+  "severity" : "trivial"
+}, {
+  "uid" : "957b2100c6f30fd6",
+  "name" : "test_case01[测试：搜索测试02--->输入值:温一壶清酒 抓包--->断言值:温一壶清酒 博客园_百度搜索--->预期:错误断言]",
+  "time" : {
+    "start" : 1597152226303,
+    "stop" : 1597152229541,
+    "duration" : 3238
+  },
+  "status" : "failed",
+  "severity" : "trivial"
 } ]

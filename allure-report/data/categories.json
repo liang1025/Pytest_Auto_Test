@@ -1,5 +1,43 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ ]
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert '温一壶清酒 抓包_百度搜索' == '温一壶清酒 博客园_百度搜索'\n  - 温一壶清酒 抓包_百度搜索\n  ?       ^^\n  + 温一壶清酒 博客园_百度搜索\n  ?       ^^^",
+      "children" : [ {
+        "name" : "test_case01[测试：搜索测试02--->输入值:温一壶清酒 抓包--->断言值:温一壶清酒 博客园_百度搜索--->预期:错误断言]",
+        "uid" : "957b2100c6f30fd6",
+        "parentUid" : "b21707f0b30628633333a6ded7f0a76e",
+        "status" : "failed",
+        "time" : {
+          "start" : 1597152226303,
+          "stop" : 1597152229541,
+          "duration" : 3238
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'模块': '搜索测试', '用例编号': '搜索测试02', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 抓包', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园_百度搜索', '预期值': '错误断言', '测试序号': 2, '': True}" ]
+      } ],
+      "uid" : "b21707f0b30628633333a6ded7f0a76e"
+    }, {
+      "name" : "AssertionError: assert '温一壶清酒 appium_百度搜索' == '温一壶清酒 博客园'\n  - 温一壶清酒 appium_百度搜索\n  + 温一壶清酒 博客园",
+      "children" : [ {
+        "name" : "test_case01[测试：搜索测试03--->输入值:温一壶清酒 appium--->断言值:温一壶清酒 博客园--->预期:错误断言]",
+        "uid" : "8b690a74361eaf84",
+        "parentUid" : "ffdbc01a677fa4409711c1896d3a3bfb",
+        "status" : "failed",
+        "time" : {
+          "start" : 1597152238654,
+          "stop" : 1597152241823,
+          "duration" : 3169
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "{'模块': '搜索测试', '用例编号': '搜索测试03', '输入说明': '1.输入：', '操作输入值': '温一壶清酒 appium', '按钮操作': '2.点击搜索按钮', '断言': '温一壶清酒 博客园', '预期值': '错误断言', '测试序号': 3, '': ''}" ]
+      } ],
+      "uid" : "ffdbc01a677fa4409711c1896d3a3bfb"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
 }

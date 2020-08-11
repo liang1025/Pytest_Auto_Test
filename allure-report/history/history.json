@@ -1,5 +1,25 @@
 {
-  "41ce72946b7a9672cfad45dddaeb7e8b" : {
+  "83cd4a7637f94acdc95e0c38dbaf3daf" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8b690a74361eaf84",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert '温一壶清酒 appium_百度搜索' == '温一壶清酒 博客园'\n  - 温一壶清酒 appium_百度搜索\n  + 温一壶清酒 博客园",
+      "time" : {
+        "start" : 1597152238654,
+        "stop" : 1597152241823,
+        "duration" : 3169
+      }
+    } ]
+  },
+  "dde5e4e40303ca6c8ec6238a1b560a9c" : {
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
@@ -9,12 +29,32 @@
       "total" : 1
     },
     "items" : [ {
-      "uid" : "4d5bdee62b037468",
+      "uid" : "a9aa5f877ad7c1a8",
       "status" : "passed",
       "time" : {
-        "start" : 1596981306218,
-        "stop" : 1596981307890,
-        "duration" : 1672
+        "start" : 1597152214449,
+        "stop" : 1597152218177,
+        "duration" : 3728
+      }
+    } ]
+  },
+  "529231b113b443a374c57b6097cf0884" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "957b2100c6f30fd6",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert '温一壶清酒 抓包_百度搜索' == '温一壶清酒 博客园_百度搜索'\n  - 温一壶清酒 抓包_百度搜索\n  ?       ^^\n  + 温一壶清酒 博客园_百度搜索\n  ?       ^^^",
+      "time" : {
+        "start" : 1597152226303,
+        "stop" : 1597152229541,
+        "duration" : 3238
       }
     } ]
   }
