@@ -7,6 +7,9 @@
 @time: 2020-08-09 16:27
 @desc:
 '''
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
 import config.config as cf
 import argparse
 from common.mainModule import log

@@ -7,12 +7,13 @@
 @time: 2020-05-03 12:30
 @desc:
 '''
-
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
-import os
 import inspect
 import time
 from common.mainModule import log

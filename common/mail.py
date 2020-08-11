@@ -3,6 +3,9 @@
 """
 邮件类。用来给指定用户发送邮件。可指定多个收件人，可带附件。
 """
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
 import re
 import smtplib
 from email.mime.multipart import MIMEMultipart

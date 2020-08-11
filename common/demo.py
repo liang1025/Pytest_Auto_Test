@@ -7,9 +7,10 @@
 @time: 2020-07-23 21:40
 @desc:
 '''
-
-import xlrd
 import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
+import xlrd
 import datetime
 from xlrd import xldate_as_tuple
 

@@ -7,8 +7,10 @@
 @time: 2020-07-29 21:41
 @desc:
 '''
-import zipfile
 import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
+import zipfile
 from common.mainModule import log
 
 

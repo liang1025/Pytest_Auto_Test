@@ -7,6 +7,9 @@
 @time: 2020-07-05 13:26
 @desc:
 '''
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
 from common.ExcelData import ExcelData
 
 

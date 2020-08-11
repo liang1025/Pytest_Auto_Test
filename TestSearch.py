@@ -11,6 +11,10 @@
 @desc:
 '''
 
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
+
 import pytest
 from pages.SearchPage import SearchPage
 import config.config as cf
@@ -20,7 +24,6 @@ from common.mail import Email
 from common.ExcelList import ExcelList
 from common.ExcelData import ExcelData
 import allure
-import os
 import common.ReportZip as report_zip
 import common.Argprase as argparse
 from pages.JenkinsPage import JenkinsPage

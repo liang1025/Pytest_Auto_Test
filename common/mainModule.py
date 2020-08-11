@@ -7,7 +7,9 @@
 @time: 2020-05-03 12:34
 @desc:
 '''
-
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
 import logging
 import os.path
 import time
