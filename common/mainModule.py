@@ -1,3 +1,5 @@
+# encoding=utf-8
+
 '''
 @author: wenyihuqingjiu
 @project: Pytest_Auto_Test
