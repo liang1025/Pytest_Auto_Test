@@ -37,7 +37,6 @@ lxml==4.4.1
 MarkupSafe==1.0
 more-itertools==7.2.0
 msgpack-python==0.5.6
-MySQL-python==1.2.5
 namedlist==1.7
 numpy==1.16.0
 opencv-contrib-python==3.4.2.17
