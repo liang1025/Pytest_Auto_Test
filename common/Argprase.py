@@ -18,6 +18,7 @@ from common.mainModule import log
 class Argprase():
 
     def get_args(self):
+        log.info("Argprase命令行类初始化")
         cf.init()
         """命令行参数解析"""
         parser = argparse.ArgumentParser(description=u'可选择参数：')

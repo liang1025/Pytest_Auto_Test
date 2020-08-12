@@ -19,7 +19,8 @@ import time
 
 @pytest.fixture(scope='function')
 def quit_driver():
-    # cf.init()
+    log.info("conftest文件初始化")
+    cf.init()
     binary_location = '/usr/bin/google-chrome'
     chrome_driver_binary = '/usr/bin/chromedriver'
     chrome_options = webdriver.ChromeOptions()
