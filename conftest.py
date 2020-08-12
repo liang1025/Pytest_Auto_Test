@@ -20,11 +20,21 @@ import time
 @pytest.fixture(scope='function')
 def quit_driver():
     # cf.init()
+    binary_location = '/usr/bin/google-chrome'
+    chrome_driver_binary = '/usr/bin/chromedriver'
     chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = binary_location
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--start-maximized')  # 窗口最大化
     # 新版google不显示正在受自动化软件控制
     chrome_options.add_experimental_option('excludeSwitches', ['enable-automation'])
-    driver = webdriver.Chrome(options=chrome_options)
+    # driver = webdriver.Chrome(options=chrome_options)
+    chromedriver = chrome_driver_binary
+    os.environ["webdriver.chrome.driver"] = chromedriver
+    driver = webdriver.Chrome(executable_path='/usr/bin/chromedriver', chrome_options=chrome_options)
     driver.get(cf.get_value('site'))
     log.info('打开的网址是：' + cf.get_value('site'))
     log.info("初始化driver")
