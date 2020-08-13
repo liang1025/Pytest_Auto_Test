@@ -15,6 +15,7 @@ import config.config as cf
 from common.mainModule import log
 from py._xmlgen import html
 import time
+from selenium.webdriver.chrome.options import Options
 
 
 @pytest.fixture(scope='function')
@@ -22,8 +23,9 @@ def quit_driver():
     # log.info("conftest文件初始化")
     # cf.init()
     binary_location = '/usr/bin/google-chrome'
-    chrome_driver_binary = '/usr/local/share/chromedriver'
-    chrome_options = webdriver.ChromeOptions()
+    chrome_driver_binary = '/usr/local/bin/chromedriver'
+    # chrome_options = webdriver.ChromeOptions()
+    chrome_options = Options()
     chrome_options.binary_location = binary_location
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--headless')
@@ -34,7 +36,7 @@ def quit_driver():
     chrome_options.add_experimental_option('excludeSwitches', ['enable-automation'])
     # driver = webdriver.Chrome(options=chrome_options)
     os.environ["webdriver.chrome.driver"] = chrome_driver_binary
-    driver = webdriver.Chrome(executable_path='/usr/local/share/chromedriver', chrome_options=chrome_options)
+    driver = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver', chrome_options=chrome_options)
     driver.get(cf.get_value('site'))
     log.info('打开的网址是：' + cf.get_value('site'))
     log.info("初始化driver")
