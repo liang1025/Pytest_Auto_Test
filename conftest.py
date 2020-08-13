@@ -21,6 +21,7 @@ import time
 def quit_driver():
     # log.info("conftest文件初始化")
     # cf.init()
+    # 调试
     binary_location = '/usr/bin/google-chrome'
     chrome_driver_binary = '/usr/bin/chromedriver'
     chrome_options = webdriver.ChromeOptions()
