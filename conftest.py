@@ -27,10 +27,11 @@ def quit_driver():
     # chrome_options = webdriver.ChromeOptions()
     chrome_options = Options()
     chrome_options.binary_location = binary_location
-    chrome_options.add_argument('--no-sandbox')
-    chrome_options.add_argument('--headless')
-    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
+    chrome_options.add_argument('--headless')  # 浏览器不提供可视化页面. linux下如果系统不支持可视化不加这条会启动失败
+    chrome_options.add_argument('--disable-gpu')  # 谷歌文档提到需要加上这个属性来规避bug
     chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_argument('blink-settings=imagesEnabled=false')  # 不加载图片, 提升速度
     chrome_options.add_argument('--start-maximized')  # 窗口最大化
     # 新版google不显示正在受自动化软件控制
     chrome_options.add_experimental_option('excludeSwitches', ['enable-automation'])
