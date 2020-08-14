@@ -95,20 +95,22 @@ if __name__ == '__main__':
     # 生成allure报告
     mark = cf.get_value('mark')
     log.info('获取到的mark数据：' + mark)
-    pytest.main(['-q', '-s', 'TestSearch.py', '-m' + mark, '--alluredir', './report'])
+    pytest.main(['-q', '-s', 'TestSearch.py', '-m' + mark, '--alluredir', '/var/jenkins_home/workspace/github_demo/target/allure-results'])
     init_report = 'allure generate --clean ./report'
     os.system(init_report)
     log.info("测试报告json文件初始化成功！")
     time.sleep(2)
-    report_file_path = os.getcwd() + '\\allure - report'
-    report_zip_path = os.getcwd() + '\\reportzip\\' + '自动化测试' + report_time + '.zip'
+    # report_file_path = os.getcwd() + '\\allure - report'
+    # report_zip_path = os.getcwd() + '\\reportzip\\' + '自动化测试' + report_time + '.zip'
+    report_file_path = '/var/jenkins_home/workspace/github_demo/target/allure-results'
+    report_zip_path = '/var/jenkins_home/workspace/github_demo/reportzip/' + '自动化测试' + report_time + '.zip'
     # 调用打包程序
     data = report_zip.ReportZip(report_file_path, report_zip_path)
     data.report_zip()
-    del_report_path = 'del /f /q G:\\202001-202012\\pytest\\Pytest_Auto_Test\\report'
-    log.info(del_report_path)
-    os.system(del_report_path)
-    log.info("删除report下的json文件")
+    # del_report_path = 'del /f /q G:\\202001-202012\\pytest\\Pytest_Auto_Test\\report'
+    # log.info(del_report_path)
+    # os.system(del_report_path)
+    # log.info("删除report下的json文件")
     # mail_msg = """
     #             <p>Python 邮件发送测试...</p>
     #             <p><a href="https://www.cnblogs.com/hong-fithing/">这是温一壶清酒的博客链接</a></p>
