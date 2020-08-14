@@ -95,7 +95,7 @@ if __name__ == '__main__':
     # 生成allure报告
     mark = cf.get_value('mark')
     log.info('获取到的mark数据：' + mark)
-    pytest.main(['-q', '-s', 'TestSearch.py', '-m' + mark, '--alluredir', '/var/jenkins_home/workspace/github_demo/allure-report'])
+    pytest.main(['-q', '-s', 'TestSearch.py', '-m' + mark, '--alluredir', '/var/jenkins_home/workspace/github_demo/target/allure-results'])
     # init_report = 'allure generate --clean ./report'
     # os.system(init_report)
     # log.info("测试报告json文件初始化成功！")
