@@ -24,7 +24,7 @@ class Logger:
         # 创建一个handler,用于写入日志文件
         rq = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
         # log_path = os.getcwd() + '/logs/'  # 本地运行logs地址
-        log_path = '/var/jenkins_home/workspace/github_demo/logs'  # 服务器运行logs地址
+        log_path = '/var/jenkins_home/workspace/github_demo/logs/'  # 服务器运行logs地址
         # print(log_path)
         # file_hanlder = logging.FileHandler(filename='example.log', encoding='utf-8')
         log_name = log_path + rq + '.log'

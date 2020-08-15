@@ -95,6 +95,10 @@ if __name__ == '__main__':
     # 生成allure报告
     mark = cf.get_value('mark')
     log.info('获取到的mark数据：' + mark)
+    # 本地运行
+    # pytest.main(['-q', '-s', 'TestSearch.py', '-m' + mark, '--alluredir',
+    #              './report'])
+    # 服务器运行
     pytest.main(['-q', '-s', 'TestSearch.py', '-m' + mark, '--alluredir', '/var/jenkins_home/workspace/github_demo/target/allure-results'])
     # init_report = 'allure generate --clean ./report'
     # os.system(init_report)
@@ -102,11 +106,11 @@ if __name__ == '__main__':
     time.sleep(2)
     # report_file_path = os.getcwd() + '\\allure - report'
     # report_zip_path = os.getcwd() + '\\reportzip\\' + '自动化测试' + report_time + '.zip'
-    # report_file_path = '/var/jenkins_home/workspace/github_demo/target/allure-results'
-    # report_zip_path = '/var/jenkins_home/workspace/github_demo/reportzip/' + '自动化测试' + report_time + '.zip'
+    report_file_path = '/var/jenkins_home/workspace/github_demo/allure-report'
+    report_zip_path = '/var/jenkins_home/workspace/github_demo/reportzip/' + '自动化测试' + report_time + '.zip'
     # # 调用打包程序
-    # data = report_zip.ReportZip(report_file_path, report_zip_path)
-    # data.report_zip()
+    data = report_zip.ReportZip(report_file_path, report_zip_path)
+    data.report_zip()
     # del_report_path = 'del /f /q G:\\202001-202012\\pytest\\Pytest_Auto_Test\\report'
     # log.info(del_report_path)
     # os.system(del_report_path)
