@@ -48,8 +48,3 @@ Tue, 11 Aug 2020 21:23:59-common.mainModule-BasePage.py-[line:201]-INFO-[日志�
 Tue, 11 Aug 2020 21:24:01-common.mainModule-BasePage.py-[line:364]-INFO-[日志信息]: 等待2秒
 Tue, 11 Aug 2020 21:24:01-common.mainModule-BasePage.py-[line:206]-INFO-[日志信息]: 当前页面的title:温一壶清酒 appium_百度搜索
 Tue, 11 Aug 2020 21:24:05-common.mainModule-conftest.py-[line:32]-INFO-[日志信息]: 关闭浏览器
-Tue, 11 Aug 2020 21:24:11-common.mainModule-TestSearch.py-[line:97]-INFO-[日志信息]: 测试报告json文件初始化成功！
-Tue, 11 Aug 2020 21:24:13-common.mainModule-ReportZip.py-[line:24]-INFO-[日志信息]: 执行打包程序
-Tue, 11 Aug 2020 21:24:13-common.mainModule-ReportZip.py-[line:31]-INFO-[日志信息]: 压缩成功
-Tue, 11 Aug 2020 21:24:13-common.mainModule-TestSearch.py-[line:105]-INFO-[日志信息]: del /f /q G:\202001-202012\pytest\Pytest_Auto_Test\report
-Tue, 11 Aug 2020 21:24:13-common.mainModule-TestSearch.py-[line:107]-INFO-[日志信息]: 删除report下的json文件
