@@ -7,11 +7,7 @@
 @time: 2020-05-04 20:08
 @desc:
 '''
-import os
-import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
 from pages.BasePage import BasePage
-from common.mainModule import log
 
 
 class SearchPage(BasePage):

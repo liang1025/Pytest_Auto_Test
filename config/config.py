@@ -7,10 +7,7 @@
 @time: 2020-05-03 12:33
 @desc:
 '''
-
 import os
-import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
 
 
 def init():

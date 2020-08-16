@@ -7,8 +7,6 @@
 '''
 
 import os
-import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
 import pytest
 from selenium import webdriver
 import config.config as cf
@@ -47,24 +45,6 @@ def quit_driver():
     log.info('关闭浏览器')
 
 
-@pytest.fixture(scope='module')
-def clear_report():
-    log.info('运行代码')
-    # cf.init() # 以pytest框架方式运行代码需要开启
-    log.info('全局初始化')
-    yield
-    # time.sleep(5)
-    # log.info("报告延迟处理10s")
-    init_report = 'allure generate --clean ./report'
-    os.system(init_report)
-    log.info("测试报告json文件初始化成功！")
-    time.sleep(2)
-    report_path = 'del /f /q G:\\202001-202012\\pytest\\Pytest_Auto_Test\\report'
-    log.info(report_path)
-    os.system(report_path)
-    log.info("删除report下的json文件")
-
-
 def pytest_collection_modifyitems(items):
     """
     测试用例收集完成时，将收集到的item的name和nodeid的中文显示在控制台上
@@ -75,32 +55,32 @@ def pytest_collection_modifyitems(items):
         item.name = item.name.encode("utf-8").decode("unicode_escape")
         item._nodeid = item.nodeid.encode("utf-8").decode("unicode_escape")
 
-# @pytest.mark.hookwrapper
-# def pytest_runtest_makereport(item):
-#     """当测试失败的时候，自动截图，展示到html报告中"""
-#     pytest_html = item.config.pluginmanager.getplugin('html')
-#     outcome = yield
-#     report = outcome.get_result()
-#     extra = getattr(report, 'extra', [])
-#
-#     if report.when == 'call' or report.when == "setup":
-#         xfail = hasattr(report, 'wasxfail')
-#         if (report.skipped and xfail) or (report.failed and not xfail):
-#             file_name = report.nodeid.replace("::", "_")+".png"
-#             screen_img = _capture_screenshot()
-#             if file_name:
-#                 html = '<div><img src="data:image/png;base64,%s" alt="screenshot" style="width:600px;height:250px;" ' \
-#                        'onclick="window.open(this.src)" align="right"/></div>' % screen_img
-#                 extra.append(pytest_html.extras.html(html))
-#         report.extra = extra
-#         report.description = str(item.function.__doc__)
-#         report.module = str(item.module.__doc__)
-#         # report.nodeid = report.nodeid.encode("utf-8").decode("unicode_escape")  # 解决乱码
-#
-#
-# def _capture_screenshot():
-#     '''截图保存为base64'''
-#     return cf.get_value('driver').get_screenshot_as_base64()
+@pytest.mark.hookwrapper
+def pytest_runtest_makereport(item):
+    """当测试失败的时候，自动截图，展示到html报告中"""
+    pytest_html = item.config.pluginmanager.getplugin('html')
+    outcome = yield
+    report = outcome.get_result()
+    extra = getattr(report, 'extra', [])
+
+    if report.when == 'call' or report.when == "setup":
+        xfail = hasattr(report, 'wasxfail')
+        if (report.skipped and xfail) or (report.failed and not xfail):
+            file_name = report.nodeid.replace("::", "_")+".png"
+            screen_img = _capture_screenshot()
+            if file_name:
+                html = '<div><img src="data:image/png;base64,%s" alt="screenshot" style="width:600px;height:250px;" ' \
+                       'onclick="window.open(this.src)" align="right"/></div>' % screen_img
+                extra.append(pytest_html.extras.html(html))
+        report.extra = extra
+        report.description = str(item.function.__doc__)
+        report.module = str(item.module.__doc__)
+        # report.nodeid = report.nodeid.encode("utf-8").decode("unicode_escape")  # 解决乱码
+
+
+def _capture_screenshot():
+    '''截图保存为base64'''
+    return cf.get_value('driver').get_screenshot_as_base64()
 
 
 @pytest.hookimpl(optionalhook=True)

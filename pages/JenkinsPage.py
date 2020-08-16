@@ -7,9 +7,6 @@
 @time: 2020-08-09 20:22
 @desc:
 '''
-import os
-import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
 from pages.BasePage import BasePage
 
 
