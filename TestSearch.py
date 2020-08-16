@@ -11,10 +11,7 @@
 @desc:
 '''
 
-# import os
-# import sys
-# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
-
+import os
 import pytest
 from pages.SearchPage import SearchPage
 import config.config as cf
@@ -100,8 +97,8 @@ if __name__ == '__main__':
     #              './report'])
     # 服务器运行
     pytest.main(['-q', '-s', 'TestSearch.py', '-m' + mark, '--alluredir', '/var/jenkins_home/workspace/github_demo/target/allure-results'])
-    # init_report = 'allure generate --clean ./report'
-    # os.system(init_report)
+    init_report = 'allure generate --clean /var/jenkins_home/workspace/github_demo/target/allure-results'
+    os.system(init_report)
     # log.info("测试报告json文件初始化成功！")
     time.sleep(2)
     # report_file_path = os.getcwd() + '\\allure - report'
