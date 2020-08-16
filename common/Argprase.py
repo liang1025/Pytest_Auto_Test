@@ -26,7 +26,7 @@ class Argprase():
         args = parser.parse_args()
         args_env = args.environment
         log.info('args数据：' + str(args_env))
-        log.info('args数据：' + str(args))
+        log.info('args传递的参数：' + str(args))
         if args.environment in ('test', 'test'):
             cf.set_value('environment', 'test')
             cf.set_value('site', 'http://www.baidu.com/')
