@@ -97,7 +97,7 @@ if __name__ == '__main__':
     #              './report'])
     # 服务器运行
     pytest.main(['-q', '-s', 'TestSearch.py', '-m' + mark, '--alluredir', '/var/jenkins_home/workspace/github_demo/target/allure-results'])
-    init_report = '/var/jenkins_home/tools/ru.yandex.qatools.allure.jenkins.tools.AllureCommandlineInstallation/allure/bin/allure generate --clean /var/jenkins_home/workspace/github_demo/target/allure-results'
+    init_report = './var/jenkins_home/tools/ru.yandex.qatools.allure.jenkins.tools.AllureCommandlineInstallation/allure/bin/allure generate --clean /var/jenkins_home/workspace/github_demo/target/allure-results'
     os.system(init_report)
     log.info(init_report)
     # log.info("测试报告json文件初始化成功！")
