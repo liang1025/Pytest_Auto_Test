@@ -35,6 +35,11 @@ def init():
     _global_dict['environment'] = 'test'
     # 标记
     _global_dict['mark'] = 'mock'
+    # allure-results
+    _global_dict['github_results'] = '/var/jenkins_home/workspace/github_demo/target/allure-results'
+    # allure
+    _global_dict['allure'] = '/var/jenkins_home/tools/ru.yandex.qatools.allure.jenkins.tools.AllureCommandlineInstallation/allure/bin/allure'
+
 
 
 def set_value(name, value):
