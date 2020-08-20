@@ -96,8 +96,10 @@ if __name__ == '__main__':
     # pytest.main(['-q', '-s', 'TestSearch.py', '-m' + mark, '--alluredir',
     #              './report'])
     # 服务器运行
-    pytest.main(['-q', '-s', 'TestSearch.py', '-m' + mark, '--alluredir', ''])
-    init_report = cf.get_value('allure') + ' generate --clean ' + cf.get_value('github_results')
+    allure_path = cf.get_value('allure')
+    results = cf.get_value('github_results')
+    pytest.main(['-q', '-s', 'TestSearch.py', '-m' + mark, '--alluredir', results])
+    init_report = allure_path + ' generate --clean ' + results
     os.system(init_report)
     log.info(init_report)
     # log.info("测试报告json文件初始化成功！")
