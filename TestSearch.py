@@ -97,7 +97,7 @@ if __name__ == '__main__':
     #              './report'])
     # 服务器运行
     pytest.main(['-q', '-s', 'TestSearch.py', '-m' + mark, '--alluredir', ''])
-    init_report = cf.get_value('allure') + 'generate --clean ' + cf.get_value('github_results')
+    init_report = cf.get_value('allure') + ' generate --clean ' + cf.get_value('github_results')
     os.system(init_report)
     log.info(init_report)
     # log.info("测试报告json文件初始化成功！")
