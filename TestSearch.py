@@ -103,7 +103,8 @@ if __name__ == '__main__':
     os.system(init_report)
     log.info(init_report)
     # log.info("测试报告json文件初始化成功！")
-    # time.sleep(2)
+    log.info("延时5s，处理报告！！！")
+    time.sleep(5)
     # report_file_path = os.getcwd() + '\\allure - report'
     # report_zip_path = os.getcwd() + '\\reportzip\\' + '自动化测试' + report_time + '.zip'
     # # 调用打包程序
